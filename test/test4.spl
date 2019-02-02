@@ -1,0 +1,38 @@
+
+{
+    int a = 3;
+    int b = 4;
+    int c = 5;
+
+    sprint("a++: ");
+    iprint(a++);
+    sprint("\n");
+
+    sprint("a: ");
+    iprint(a);
+    sprint("\n");
+
+    sprint("a-- + b++: ");
+    iprint(a-- + b++);
+    sprint("\n");
+
+    (c)++;
+    sprint("c: ");
+    iprint(c);
+    sprint("\n");
+
+    sprint("c++ + c++ + c++: ");
+    iprint(c++ + c++ + c++);
+    sprint("\n");
+
+    c = c++ - c--;
+    sprint("c: ");
+    iprint(c);
+    sprint("\n");
+
+    c = c++;
+    sprint("c: ");
+    iprint(c);
+    sprint("\n");
+}
+
