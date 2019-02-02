@@ -46,14 +46,14 @@
     {
         int i;
 
-        sprint("[");
+        sprint("[ ");
 
         for (i = 0 .. 3) {
             iprint(v[i]);
-            sprint(", ");
+            sprint(" ");
         }
 
-        sprint("\b\b]\n");
+        sprint("]\n");
     }
     
     new(x);
