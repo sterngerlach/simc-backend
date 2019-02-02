@@ -82,7 +82,7 @@ stmt : /* ID ASSIGN expr SEMI            { Assign(Var $1, $3) } */
      | NEW LP ID RP SEMI              { CallProc("new", [VarExp(Var $3)]) }
      | ID LP aargs_opt RP SEMI        { CallProc($1, $3) }
      | RETURN expr SEMI               { CallProc("return", [$2]) }
-     | expr SEMI                      { ExprStmt $1 } /* 4 */
+     | expr2 SEMI                     { ExprStmt $1 } /* 4 */
      | block                          { $1 }
      | SEMI                           { NilStmt }
      ;
@@ -112,16 +112,19 @@ expr : NUM                     { IntExp $1  }
      | expr DIV expr           { CallFunc("/", [$1; $3]) }
      | expr MOD expr           { CallFunc("%", [$1; $3]) } /* 1 */
      | expr POW expr           { CallFunc("^", [$1; $3]) } /* 3 */
-     | expr INC                { CallFunc("++", [$1]) } /* 4 */
-     | expr DEC                { CallFunc("--", [$1]) } /* 4 */
-     | expr PLUS_ASSIGN expr   { CallFunc("+=", [$1; $3]) } /* 5 */
-     | expr MINUS_ASSIGN expr  { CallFunc("-=", [$1; $3]) } /* 5 */
-     | expr TIMES_ASSIGN expr  { CallFunc("*=", [$1; $3]) } /* 5 */
-     | expr DIV_ASSIGN expr    { CallFunc("/=", [$1; $3]) } /* 5 */
-     | expr MOD_ASSIGN expr    { CallFunc("%=", [$1; $3]) } /* 5 */
      | MINUS expr %prec UMINUS { CallFunc("!", [$2]) }
      | LP expr RP              { $2 }
+     | expr2                   { $1 }
      ;
+
+expr2 : expr INC                { CallFunc("++", [$1]) } /* 4 */
+      | expr DEC                { CallFunc("--", [$1]) } /* 4 */
+      | expr PLUS_ASSIGN expr   { CallFunc("+=", [$1; $3]) } /* 5 */
+      | expr MINUS_ASSIGN expr  { CallFunc("-=", [$1; $3]) } /* 5 */
+      | expr TIMES_ASSIGN expr  { CallFunc("*=", [$1; $3]) } /* 5 */
+      | expr DIV_ASSIGN expr    { CallFunc("/=", [$1; $3]) } /* 5 */
+      | expr MOD_ASSIGN expr    { CallFunc("%=", [$1; $3]) } /* 5 */
+      ;
 
 cond : expr EQ expr  { CallFunc("==", [$1; $3]) }
      | expr NEQ expr { CallFunc("!=", [$1; $3]) }
