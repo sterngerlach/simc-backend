@@ -6,6 +6,7 @@
 parser.ml
 lexer.ml
 parser.mli
+parser.output
 tmp.s
 simc
 print_ast
