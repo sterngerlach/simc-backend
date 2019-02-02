@@ -1,0 +1,25 @@
+
+{
+    int i = 2;
+    int j = 3;
+
+    int func(int x, int y)
+    {
+        return 42;
+    }
+
+    void hoge(int x, int y)
+    {
+        int z = x + y;
+
+        int fuga()
+        {
+            return 2;
+        }
+
+        return z;
+    }
+
+    hoge(i, j);
+}
+

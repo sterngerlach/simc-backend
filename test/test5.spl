@@ -1,0 +1,45 @@
+
+{
+    int[11] resultTable;
+    int i = 0;
+
+    int powerOfTwo(int exponent) 
+    {
+        int result = 1;
+
+        while ((exponent -= 1) >= 0)
+            result *= 2;
+
+        return result;
+    }
+
+    int log2(int x)
+    {
+        int result = 0;
+
+        while ((x /= 2) > 0)
+            result += 1;
+
+        return result;
+    }
+
+    new(resultTable);
+
+    while (i < 11) {
+        resultTable[i] = powerOfTwo(i);
+        i += 1;
+    }
+
+    for (i = 0 .. 11) {
+        sprint("2 ^ ");
+        iprint(i);
+        sprint(" = ");
+        iprint(resultTable[i]);
+        sprint(", log2(");
+        iprint(resultTable[i]);
+        sprint(") = ");
+        iprint(log2(resultTable[i]));
+        sprint("\n");
+    }
+}
+

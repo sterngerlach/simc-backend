@@ -1,0 +1,25 @@
+
+{
+    int i = 5;
+
+    sprint("1: \n");
+
+    do {
+        sprint("\ti: ");
+        iprint(i);
+        sprint("\n");
+        i -= 1;
+    } while (i < 0);
+    
+    sprint("2: \n");
+
+    do {
+        sprint("\ti: ");
+        iprint(i);
+        sprint("\n");
+        i -= 1;
+    } while (i >= 3);
+
+    sprint("end\n");
+}
+

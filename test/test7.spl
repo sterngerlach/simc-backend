@@ -1,0 +1,83 @@
+
+{
+    type Vector3 = int[3];
+    Vector3 x;
+    Vector3 y;
+    Vector3 z;
+    
+    void setVector(Vector3 v, int x, int y, int z)
+    {
+        v[0] = x;
+        v[1] = y;
+        v[2] = z;
+    }
+
+    void addVector(Vector3 z, Vector3 x, Vector3 y)
+    {
+        int i;
+
+        for (i = 0 .. 3)
+            z[i] = x[i] + y[i];
+    }
+
+    int dotProduct(Vector3 x, Vector3 y)
+    {
+        int result = 0;
+        int i;
+
+        for (i = 0 .. 3)
+            result += x[i] * y[i];
+
+        return result;
+    }
+
+    int squaredDistance(Vector3 x, Vector3 y)
+    {
+        int result = 0;
+        int i;
+
+        for (i = 0 .. 3)
+            result += (x[i] - y[i]) * (x[i] - y[i]);
+
+        return result;
+    }
+
+    void printVector(Vector3 v)
+    {
+        int i;
+
+        sprint("[");
+
+        for (i = 0 .. 3) {
+            iprint(v[i]);
+            sprint(", ");
+        }
+
+        sprint("\b\b]\n");
+    }
+    
+    new(x);
+    new(y);
+    new(z);
+    
+    setVector(x, 2, 3, 4);
+    setVector(y, 4, 8, 12);
+    
+    sprint("x: ");
+    printVector(x);
+    sprint("y: ");
+    printVector(y);
+    
+    addVector(z, x, y);
+    sprint("x + y: ");
+    printVector(z);
+
+    sprint("x * y: ");
+    iprint(dotProduct(x, y));
+    sprint("\n");
+
+    sprint("|x - y| ^ 2 = ");
+    iprint(squaredDistance(x, y));
+    sprint("\n");
+}
+
