@@ -1,0 +1,18 @@
+
+{
+    int x = 2;
+    int y = 3;
+
+    sprint("2 ^ 2 ^ 3 = ");
+    iprint(x ^ x ^ y);
+    sprint("\n");
+
+    sprint("2 ^ 0 = ");
+    iprint(2 ^ 0);
+    sprint("\n");
+
+    sprint("0 ^ 0 = ");
+    iprint(0 ^ 0);
+    sprint("\n");
+}
+
