@@ -41,12 +41,6 @@
     iprint(c);
     sprint("\n");
 
-    5;
-    6;
-    c++;
-    iprint(c);
-    sprint("\n");
-
     c = c++ + c++;
     iprint(c);
     sprint("\n");

@@ -1,15 +1,12 @@
 {
     int a, b, m, n, r;
-    int[2] inputs;
 
     sprint("You must give 2 integers.\n");
 
-    new(inputs);
-
     sprint("First integer: ");
-    scan(inputs[0]);
+    scan(a);
     sprint ("Second integer: ");
-    scan(inputs[1]);
+    scan(b);
 
     m = a;
     n = b;
