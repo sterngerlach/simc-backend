@@ -1,0 +1,30 @@
+
+{
+    int x = 0;
+    int y = 0;
+
+    x = 85;
+    y = 13;
+
+    iprint(x);
+    sprint(" * ");
+    iprint(y);
+    sprint(" = ");
+    iprint(x * y);
+    sprint("\n");
+
+    iprint(x);
+    sprint(" / ");
+    iprint(y);
+    sprint(" = ");
+    iprint(x / y);
+    sprint("\n");
+    
+    iprint(x);
+    sprint(" % ");
+    iprint(y);
+    sprint(" = ");
+    iprint(x % y);
+    sprint("\n");
+}
+
