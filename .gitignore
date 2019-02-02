@@ -1,0 +1,13 @@
+
+# .gitignore
+
+*.cmi
+*.cmo
+parser.ml
+lexer.ml
+parser.mli
+tmp.s
+simc
+print_ast
+a.out
+

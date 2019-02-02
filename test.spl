@@ -1,0 +1,61 @@
+{
+    int a = 12;
+    int b = 5;
+    int c;
+    int d;
+
+    c = 37;
+    d = 13;
+    
+    sprint("result: ");
+    iprint(a % b);
+    sprint("\n");
+
+    sprint("result: ");
+    iprint(c % d);
+    sprint("\n");
+
+    iprint(2 ^ 2 ^ 3);
+    sprint("\n");
+
+    iprint(2 ^ 0);
+    sprint("\n");
+
+    iprint(0 ^ 0);
+    sprint("\n");
+
+    iprint(c++);
+    sprint("\n");
+    iprint(c);
+    sprint("\n");
+
+    d = c++ + d++ + b++;
+    iprint(d);
+    sprint("\n");
+    iprint(c);
+    sprint("\n");
+    iprint(b);
+    sprint("\n");
+
+    c++;
+    iprint(c);
+    sprint("\n");
+
+    5;
+    6;
+    c++;
+    iprint(c);
+    sprint("\n");
+
+    c = c++ + c++;
+    iprint(c);
+    sprint("\n");
+
+    c += 2;
+    iprint(c += 2);
+    sprint("\n");
+
+    iprint(c);
+    sprint("\n");
+}
+

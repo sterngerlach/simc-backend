@@ -1,0 +1,22 @@
+
+{
+    int i;
+    int j;
+
+    int func(int x, int y) {
+        return 42;
+    }
+
+    int[3] hoge(int x, int y) {
+        int fuga() {
+            return 2;
+        }
+
+        int[3] data;
+
+        return data;
+    }
+
+    hoge(2, 3);
+}
+
