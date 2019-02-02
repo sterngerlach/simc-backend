@@ -21,7 +21,7 @@
     sprint("\n");
     
     iprint(x);
-    sprint(" % ");
+    sprint(" %% ");
     iprint(y);
     sprint(" = ");
     iprint(x % y);
