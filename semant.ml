@@ -85,13 +85,15 @@ let rec type_dec ast (nest, addr) tenv env =
             let tenv' = update s (NAME(s, ref None)) tenv in (tenv', env, addr)
 
       (* 変数宣言と初期化の処理 *) (* 2 *)
-      | VarAssignDec(t, s, e) -> (
-            tenv,
-            update s (VarEntry {
-                ty = create_ty t tenv;
-                offset = addr - 8;
-                level = nest }) env,
-            addr - 8)
+      | VarAssignDec(t, s, e) -> 
+            if create_ty t tenv != type_exp e env then
+                raise (Err "type mismatch")
+            else (tenv,
+                update s (VarEntry {
+                    ty = create_ty t tenv;
+                    offset = addr - 8;
+                    level = nest }) env,
+                addr - 8)
 
       | _ -> raise (Err "internal error")
 
